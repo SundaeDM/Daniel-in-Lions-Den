@@ -1,0 +1,11 @@
+{
+  "site": "Blippi On Tour",
+  "widths": [1920, 360],
+  "urls": [
+    { "slug": "home", "url": "https://www.blippiontour.com/" },
+    { "slug": "schedule", "url": "https://www.blippiontour.com/schedule" },
+    { "slug": "about-the-show", "url": "https://www.blippiontour.com/abouttheshow-1-1-1" },
+    { "slug": "activities", "url": "https://www.blippiontour.com/activities" },
+    { "slug": "faq", "url": "https://www.blippiontour.com/faq" }
+  ]
+}
