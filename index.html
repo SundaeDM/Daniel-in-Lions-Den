@@ -5558,7 +5558,7 @@ function Footer({ onNavigate }) {
   const D = window.DITLD_DATA;
   return (
     <footer style={{ background: 'var(--surface-footer)', borderTop: '1px solid var(--gold)', padding: 'var(--space-8) clamp(1rem,4vw,2.5rem) var(--space-6)' }}>
-      <div className="ditld-footer-top" style={{ maxWidth: 'var(--maxw-wide)', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'var(--space-7)', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+      <div className="ditld-footer-top" style={{ maxWidth: 'var(--maxw-wide)', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'var(--space-7)', justifyContent: 'space-between', alignItems: 'stretch' }}>
         <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '0.3rem' }}>
           <span className="ditld-eyebrow" style={{ fontSize: '0.5625rem', fontWeight: 400, color: 'var(--cream)' }}>A Live Musical Experience</span>
           <img src={__IMGS[1]} alt="Daniel in the Lions' Den" style={{ width: '13.75rem', display: 'block' }} />
@@ -5575,7 +5575,7 @@ function Footer({ onNavigate }) {
               </button>
             ))}
           </div>
-          <p style={{ margin: 0, fontFamily: 'var(--font-body)', fontSize: '0.75rem', lineHeight: 1.6, color: 'var(--cream-muted)', textAlign: 'center' }}>
+          <p style={{ margin: 0, marginTop: 'auto', fontFamily: 'var(--font-body)', fontSize: '0.75rem', lineHeight: 1.6, color: 'var(--cream-muted)', textAlign: 'center' }}>
             For press inquiries, please contact<br />
             <a href="mailto:press@theoriginals.live" style={{ color: 'var(--gold)', textDecoration: 'none' }}>press@theoriginals.live</a>
           </p>
