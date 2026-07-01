@@ -5317,7 +5317,7 @@ window.DITLD_DATA = {
       a: 'Yes! There are moments to clap, cheer, and join in — but no child is ever singled out or required to participate. Bring your energy and enjoy.'
     }]
   },
-  social: ['instagram', 'facebook', 'tiktok', 'youtube']
+  social: ['instagram', 'facebook']
 };
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/data.js", error: String((e && e.message) || e) }); }
 
@@ -5450,29 +5450,29 @@ window.DITLD_DATA = {
 
   faqs: {
     general: [
-      { q: 'What is Daniel in the Lions’ Den?', a: 'A live musical stage experience that brings the story of Daniel — and the featured story of Esther — to life with high-energy music, spectacular live action, and unforgettable moments of courage and faith.' },
-      { q: 'Is this a religious show? Is it church-appropriate?', a: 'Yes. It’s a faith-based retelling of two beloved stories. It’s church-appropriate and family-friendly, but the storytelling speaks for itself — it’s an adventure first, never a lecture.' },
-      { q: 'How is this different from other children’s theatre?', a: 'This is a full production: live music, dramatic lighting, and real stage magic, built to feel like a night out — not a low-budget skit.' },
+      { q: 'What is the Daniel In The Lions’ Den Tour?', a: '“Daniel in the Lions’ Den,” along with “Esther: The Bravest Queen,” is a live stage theatrical, two-story musical adventure from The Originals Live. The production takes the stories straight from the biblical text and features soaring original music, an ensemble cast built for families, and a production design that brings the ancient world vividly to life. It’s filled with humor, spectacle, and genuine heart.' },
+      { q: 'Who is this show for?', a: 'The Originals Live brings full theatrical stage productions that families can all enjoy together. From our youngest fans to grandparents and beyond, these shows are built for all.' },
+      { q: 'How long is the show?', a: 'A typical performance is around 90 minutes in length, including one 20-minute intermission.' },
+      { q: 'What time should I arrive?', a: 'Please make sure to allow time for traffic, parking, and entrance delays. Once inside the venue, you may want to purchase merchandise or refreshments before being seated for the start of the show.' },
+      { q: 'Who can I contact about a question regarding Daniel In The Lions’ Den Tour?', a: 'You can contact the show directly at info@theoriginals.live.' },
     ],
     tickets: [
-      { q: 'How do I buy tickets?', a: 'Pick your city on the Schedule page and you’ll be taken to that venue’s official ticketing page to choose your seats.' },
-      { q: 'Are there group discounts for churches, schools, or homeschool groups?', a: 'Yes — most venues offer group rates. Email us and we’ll connect you with the right group sales contact for your city.' },
-      { q: 'Why isn’t my city on the schedule yet?', a: 'We’re adding cities all the time. Sign up for alerts and we’ll let you know the moment tickets go on sale near you.' },
+      { q: 'Why isn’t the tour coming to my city?', a: 'We’re adding cities all the time. Sign up for alerts and we’ll let you know the moment tickets go on sale near you.' },
+      { q: 'Do you offer any special ticket pricing for large groups?', a: 'Yes! Please contact your local box office to inquire about group discounts.' },
+      { q: 'How do I get a code to purchase pre-sale tickets?', a: 'In order to receive a pre-sale code, you must first sign up for The Originals Live email list found on the home page and follow us on social media.' },
+      { q: 'Will I get a refund if the show is canceled due to unforeseen circumstances?', a: 'Yes, if a show is officially canceled, ticket holders will typically be eligible for a refund. Your point of purchase will contact you directly for further assistance.' },
     ],
     access: [
-      { q: 'Is there accessible / wheelchair seating available?', a: 'Yes. Accessible seating is available at every venue — choose it when booking, or email us and we’ll help you find the right seats.' },
-      { q: 'Are strollers permitted inside the venue?', a: 'Stroller policies vary by venue. Most offer stroller check at the door — check your venue’s page when booking, or just ask us.' },
-      { q: 'Will there be loud sounds or flashing lights?', a: 'The show includes dramatic lighting and live sound effects. If your child is sensitive, we recommend checking with your venue about sensory-friendly seating options.' },
+      { q: 'Is there accessible seating available?', a: 'For accessible seating options, we recommend contacting your venue directly. They’ll be able to provide the most accurate information and assist you with any specific needs or accommodations.' },
     ],
     age: [
-      { q: 'How long is the show?', a: '90 minutes with no intermission — the perfect length for young attention spans.' },
-      { q: 'Is the show suitable for toddlers or babies?', a: 'It’s designed for ages 3 and up, but plenty of younger siblings enjoy it too. Most venues require a ticket for any child occupying a seat.' },
-      { q: 'Is the content scary for young children?', a: 'There are moments of suspense — that’s part of what makes it powerful — but nothing gratuitous, and it ends in a triumphant, joyful resolution. Most children leave excited, not frightened.' },
-      { q: 'Will there be audience participation?', a: 'Yes! There are moments to clap, cheer, and join in — but no child is ever singled out or required to participate. Bring your energy and enjoy.' },
+      { q: 'Will there be any special effects during the show?', a: 'Yes! The show features exciting special effects, including moving lights, sound effects, confetti cannons, and theatrical smoke. It’s all part of creating an unforgettable theatrical experience for our audience!' },
+      { q: 'Is the content scary for young children?', a: 'There are moments of suspense. That’s part of what makes it powerful, but nothing is gratuitous, and it ends in a triumphant, joyful resolution. Most children leave excited and singing along!' },
+      { q: 'Will there be audience participation?', a: 'Yes! There are moments to clap, cheer, and join in, but no individual is ever singled out or required to participate. Bring your energy and enjoy.' },
     ],
   },
 
-  social: ['instagram', 'facebook', 'tiktok', 'youtube'],
+  social: ['instagram', 'facebook'],
 };
 
 </script>
@@ -5584,10 +5584,9 @@ function Footer({ onNavigate }) {
 
         <div style={{ display: 'flex', gap: 'var(--space-4)' }}>
           {D.social.map((s) => (
-            <a key={s} href="#" aria-label={s} style={{ color: 'var(--cream-muted)', transition: 'color var(--dur-fast)', display: 'flex' }}
+            <a key={s} href={s === 'facebook' ? 'https://www.facebook.com/theoriginalslive' : 'https://www.instagram.com/theoriginals.live/'} target="_blank" rel="noopener noreferrer" aria-label={s} style={{ color: 'var(--cream-muted)', transition: 'color var(--dur-fast)', display: 'flex' }}
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--gold)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--cream-muted)'}
-              onClick={(e) => e.preventDefault()}>
+              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--cream-muted)'}>
               <Icon name={s} size={22} />
             </a>
           ))}
@@ -6179,7 +6178,7 @@ function FaqPage({ onNavigate }) {
             </p>
             <div style={{ display: 'flex', gap: 'var(--space-4)' }}>
               {D.social.map((s) => (
-                <a key={s} href="#" aria-label={s} onClick={(e) => e.preventDefault()} style={{ color: 'var(--gold)', display: 'flex', transition: 'transform var(--dur-fast)' }}
+                <a key={s} href={s === 'facebook' ? 'https://www.facebook.com/theoriginalslive' : 'https://www.instagram.com/theoriginals.live/'} target="_blank" rel="noopener noreferrer" aria-label={s} style={{ color: 'var(--gold)', display: 'flex', transition: 'transform var(--dur-fast)' }}
                   onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
                   onMouseLeave={(e) => e.currentTarget.style.transform = 'none'}>
                   <Icon name={s} size={26} />
