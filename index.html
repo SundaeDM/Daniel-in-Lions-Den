@@ -5448,29 +5448,21 @@ window.DITLD_DATA = {
     { id: 'age',     label: 'Age & Content' },
   ],
 
-  faqs: {
-    general: [
-      { q: 'What is the Daniel In The Lions’ Den Tour?', a: '“Daniel in the Lions’ Den,” along with “Esther: The Bravest Queen,” is a live stage theatrical, two-story musical adventure from The Originals Live. The production takes the stories straight from the biblical text and features soaring original music, an ensemble cast built for families, and a production design that brings the ancient world vividly to life. It’s filled with humor, spectacle, and genuine heart.' },
-      { q: 'Who is this show for?', a: 'The Originals Live brings full theatrical stage productions that families can all enjoy together. From our youngest fans to grandparents and beyond, these shows are built for all.' },
-      { q: 'How long is the show?', a: 'A typical performance is around 90 minutes in length, including one 20-minute intermission.' },
-      { q: 'What time should I arrive?', a: 'Please make sure to allow time for traffic, parking, and entrance delays. Once inside the venue, you may want to purchase merchandise or refreshments before being seated for the start of the show.' },
-      { q: 'Who can I contact about a question regarding Daniel In The Lions’ Den Tour?', a: 'You can contact the show directly at info@theoriginals.live.' },
-    ],
-    tickets: [
-      { q: 'Why isn’t the tour coming to my city?', a: 'We’re adding cities all the time. Sign up for alerts and we’ll let you know the moment tickets go on sale near you.' },
-      { q: 'Do you offer any special ticket pricing for large groups?', a: 'Yes! Please contact your local box office to inquire about group discounts.' },
-      { q: 'How do I get a code to purchase pre-sale tickets?', a: 'In order to receive a pre-sale code, you must first sign up for The Originals Live email list found on the home page and follow us on social media.' },
-      { q: 'Will I get a refund if the show is canceled due to unforeseen circumstances?', a: 'Yes, if a show is officially canceled, ticket holders will typically be eligible for a refund. Your point of purchase will contact you directly for further assistance.' },
-    ],
-    access: [
-      { q: 'Is there accessible seating available?', a: 'For accessible seating options, we recommend contacting your venue directly. They’ll be able to provide the most accurate information and assist you with any specific needs or accommodations.' },
-    ],
-    age: [
-      { q: 'Will there be any special effects during the show?', a: 'Yes! The show features exciting special effects, including moving lights, sound effects, confetti cannons, and theatrical smoke. It’s all part of creating an unforgettable theatrical experience for our audience!' },
-      { q: 'Is the content scary for young children?', a: 'There are moments of suspense. That’s part of what makes it powerful, but nothing is gratuitous, and it ends in a triumphant, joyful resolution. Most children leave excited and singing along!' },
-      { q: 'Will there be audience participation?', a: 'Yes! There are moments to clap, cheer, and join in, but no individual is ever singled out or required to participate. Bring your energy and enjoy.' },
-    ],
-  },
+  faqs: [
+    { cat: 'general', q: 'What is the Daniel In The Lions’ Den Tour?', a: '“Daniel in the Lions’ Den,” along with “Esther: The Bravest Queen,” is a live stage theatrical, two-story musical adventure from The Originals Live. The production takes the stories straight from the biblical text and features soaring original music, an ensemble cast built for families, and a production design that brings the ancient world vividly to life. It’s filled with humor, spectacle, and genuine heart.' },
+    { cat: 'general', q: 'Who is this show for?', a: 'The Originals Live brings full theatrical stage productions that families can all enjoy together. From our youngest fans to grandparents and beyond, these shows are built for all.' },
+    { cat: 'general', q: 'How long is the show?', a: 'A typical performance is around 90 minutes in length, including one 20-minute intermission.' },
+    { cat: 'age', q: 'Will there be any special effects during the show?', a: 'Yes! The show features exciting special effects, including moving lights, sound effects, confetti cannons, and theatrical smoke. It’s all part of creating an unforgettable theatrical experience for our audience!' },
+    { cat: 'access', q: 'Is there accessible seating available?', a: 'For accessible seating options, we recommend contacting your venue directly. They’ll be able to provide the most accurate information and assist you with any specific needs or accommodations.' },
+    { cat: 'general', q: 'What time should I arrive?', a: 'Please make sure to allow time for traffic, parking, and entrance delays. Once inside the venue, you may want to purchase merchandise or refreshments before being seated for the start of the show.' },
+    { cat: 'tickets', q: 'Why isn’t the tour coming to my city?', a: 'We’re adding cities all the time. Sign up for alerts and we’ll let you know the moment tickets go on sale near you.' },
+    { cat: 'tickets', q: 'Do you offer any special ticket pricing for large groups?', a: 'Yes! Please contact your local box office to inquire about group discounts.' },
+    { cat: 'tickets', q: 'How do I get a code to purchase pre-sale tickets?', a: 'In order to receive a pre-sale code, you must first sign up for The Originals Live email list found on the home page and follow us on social media.' },
+    { cat: 'tickets', q: 'Will I get a refund if the show is canceled due to unforeseen circumstances?', a: 'Yes, if a show is officially canceled, ticket holders will typically be eligible for a refund. Your point of purchase will contact you directly for further assistance.' },
+    { cat: 'age', q: 'Is the content scary for young children?', a: 'There are moments of suspense. That’s part of what makes it powerful, but nothing is gratuitous, and it ends in a triumphant, joyful resolution. Most children leave excited and singing along!' },
+    { cat: 'age', q: 'Will there be audience participation?', a: 'Yes! There are moments to clap, cheer, and join in, but no individual is ever singled out or required to participate. Bring your energy and enjoy.' },
+    { cat: 'general', q: 'Who can I contact about a question regarding Daniel In The Lions’ Den Tour?', a: 'You can contact the show directly at info@theoriginals.live.' },
+  ],
 
   social: ['instagram', 'facebook'],
 };
@@ -6156,7 +6148,7 @@ function FaqPage({ onNavigate }) {
   const D = window.DITLD_DATA;
   const tabs = [{ id: 'all', label: 'All' }, ...D.faqCategories];
   const [cat, setCat] = useState('all');
-  const items = cat === 'all' ? Object.values(D.faqs).flat() : (D.faqs[cat] || []);
+  const items = cat === 'all' ? D.faqs : D.faqs.filter((f) => f.cat === cat);
 
   return (
     <div data-screen-label="FAQ">
