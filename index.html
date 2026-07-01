@@ -5563,15 +5563,21 @@ function Footer({ onNavigate }) {
           <img src={__IMGS[1]} alt="Daniel in the Lions' Den" style={{ width: '13.75rem', display: 'block' }} />
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-5)' }}>
-          {D.nav.map((item) => (
-            <button key={item.id} type="button" onClick={() => onNavigate(item.id)}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--cream-muted)', transition: 'color var(--dur-fast)' }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--cream)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--cream-muted)'}>
-              {item.label}
-            </button>
-          ))}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-4)' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-5)', justifyContent: 'center' }}>
+            {D.nav.map((item) => (
+              <button key={item.id} type="button" onClick={() => onNavigate(item.id)}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--cream-muted)', transition: 'color var(--dur-fast)' }}
+                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--cream)'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--cream-muted)'}>
+                {item.label}
+              </button>
+            ))}
+          </div>
+          <p style={{ margin: 0, fontFamily: 'var(--font-body)', fontSize: '0.75rem', lineHeight: 1.6, color: 'var(--cream-muted)', textAlign: 'center' }}>
+            For general and press inquiries, please contact<br />
+            <a href="mailto:press@theoriginals.live" style={{ color: 'var(--gold)', textDecoration: 'none' }}>press@theoriginals.live</a>
+          </p>
         </div>
 
         <div style={{ display: 'flex', gap: 'var(--space-4)' }}>
